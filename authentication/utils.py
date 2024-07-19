@@ -1,6 +1,7 @@
 import jwt
 from datetime import datetime, timedelta
 from django.conf import settings
+from django.core.signing import Signer
 from .models import CustomUser
 
 def checkUserPayload(payload):

@@ -4,9 +4,12 @@ from django.contrib.auth.decorators import login_required
 from .models import CustomUser
 from .utils import generate_jwt, decode_jwt, checkUserPayload
 from functools import wraps
+from django.core.mail import send_mail
+from django.conf import settings
 import json
 
 def jwt_required(func):
+    """Decorator to check for a valid JWT token."""
     @wraps(func)
     def wrapper_function(request, *args, **kwargs):
         token = request.META.get('HTTP_AUTHORIZATION')
@@ -21,6 +24,7 @@ def jwt_required(func):
     return wrapper_function
 
 def login(request):
+    """Login view to authenticate a user and return a JWT token."""
     if request.method == 'POST':
         data = json.loads(request.body)
         if data['username'] and data['password']:
@@ -32,13 +36,14 @@ def login(request):
     return HttpResponse('bad http request')
 
 def register(request):
+    """Register view to create a new user."""
     if request.method == 'POST':
         data = json.loads(request.body)
         if (data['username'] and 
             data['fullname'] and 
             data['email'] and 
             data['password']):
-            user = CustomUser.objects.create_user(username=data['username'], 
+            user = CustomUser.objects.create_user(username=data['username'],
                                                     full_name=data['fullname'], 
                                                     email=data['email'], 
                                                     password=data['password'])
@@ -49,6 +54,7 @@ def register(request):
 
 @jwt_required
 def changePassword(request):
+    """View to change the user's password."""
     if request.method == 'POST':
         data = json.loads(request.body)
         if data['newpassword']:
