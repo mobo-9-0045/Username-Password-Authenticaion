@@ -22,4 +22,5 @@ This repository contains the implementation of a microservice for user authentic
 git clone https://github.com/yourusername/django-authentication.git
 cd django-authentication
 ```
-![image](https://github.com/user-attachments/assets/b3f51786-898a-429a-bd7e-621885e2f33f)
+![image](https://github.com/user-attachments/assets/62e467b2-e6c9-4cdc-aa96-f34885e1f2e6)
+
