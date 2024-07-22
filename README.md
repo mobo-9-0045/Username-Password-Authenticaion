@@ -30,8 +30,8 @@ Follow these instructions to get a copy of the project up and running on your lo
   
       ```bash  
   
-      git clone https://github.com/yourusername/django-authentication.git
-      cd django-authentication
+      git@github.com:mobo-9-0045/Username-Password-Authenticaion.git
+      cd Username-Password-Authenticaion
       ```
   2. **Install dependencies:**
   
