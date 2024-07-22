@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'django_auth.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'NIlgosLerCLZGNMUzvWDLZLmchtquCmS',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '31680',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
