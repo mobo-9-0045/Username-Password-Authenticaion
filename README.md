@@ -167,6 +167,13 @@ Follow these instructions to get a copy of the project up and running on your lo
     {
         newpassword: newpassword.value,
     },
+    {
+        headers:
+        {
+            'Authorization': `token you stored before`
+        },
+        withCredentials: true 
+    });
     ```
   
   Response:
